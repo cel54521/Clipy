@@ -1,0 +1,58 @@
+.clipboard-History-Element {
+    font-size: 14px;
+    background-color: powderblue;
+    transition: background-color .5s;
+}
+      
+.clipboard-History-Element:hover {
+    font-size: 14px;
+    background-color: rgb(75, 204, 165);
+}
+
+body {
+    background: rgba(0, 0, 0, 0.4);
+
+}
+.clipboard-title-bar {
+    background-color: gold;
+    -webkit-app-region: drag;
+}
+
+canvas {
+  display: block;
+  margin: 0 0 20px 0;
+  border: 1px solid black;
+}
+
+h1 {
+    margin: 0 0 20px 0;
+    font-size: 130%;
+    color: #333333;
+    padding: 5px 10px;
+    border-left: 10px solid #cc3366;
+    border-bottom: 2px solid #cc3366;
+}
+h2 {
+    margin: 0 0 5px 0;
+    font-size: 110%;
+    color: #333333;
+    padding: 5px 10px;
+    border-left: 10px solid #663366;
+}
+p {
+    font-size: 14px;
+    color: #666666;
+    padding-left: 2em;    
+}
+
+a {
+    font-size: 14px;
+    color: #666666;
+    padding-left: 2em;    
+}
+
+.main {
+    font-size: 14px;
+    color: #666666;
+    padding-left: 2em;
+}
