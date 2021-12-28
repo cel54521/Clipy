@@ -14,6 +14,8 @@ body {
 
 }
 .clipboard-title-bar {
+    width: 100%;
+    height: 10px;
     background-color: gold;
     -webkit-app-region: drag;
 }
