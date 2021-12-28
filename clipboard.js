@@ -6,15 +6,24 @@ let clipboardHistoryNo = 0;
 
 // ダブルクリックされた場合、ダブルクリックされた要素の内容をクリップボードに戻す
 function clipboard_area_dblClick(e) {
-    clipboard.writeText( e.currentTarget.innerHTML )
+    let clipboardText = e.currentTarget.innerHTML
+    
+    clipboardText = clipboardText.substring(5, clipboardText.length-6)
+
+    clipboardText = clipboardText.replace(/&lt;/g, "<")
+    clipboardText = clipboardText.replace(/&gt;/g, ">")
+
+    clipboard.writeText( clipboardText )
 }
 
 // クリップボード履歴の内容を<div>タグを付与して表示する画面の更新
 function createClipBoardHistoryElement(pasteText) {
     const clipboardAreaElement = document.getElementById("clipboard_area")
-    // TODO:HTMLのタグなどをテキストに変換して出力するようにする必要がある
     const newClipBoardHistoryElement = document.createElement("div")
 
+    // HTMLタグ置き換え
+    pasteText = pasteText.replace(/</g,"&lt;")
+    pasteText = pasteText.replace(/>/g,"&gt;")
     newClipBoardHistoryElement.innerHTML = "<pre>" + pasteText + "</pre>"
     newClipBoardHistoryElement.className = "clipboard-History-Element"
     
@@ -23,8 +32,6 @@ function createClipBoardHistoryElement(pasteText) {
 
     newClipBoardHistoryElement.addEventListener("dblclick", clipboard_area_dblClick)
     clipboardAreaElement.prepend(newClipBoardHistoryElement)
-
-
 }
 
 function intervalProc(){
